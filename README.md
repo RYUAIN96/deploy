@@ -28,13 +28,17 @@ deploy
 - 7. 브라우저 가동
 - 8. 13.125.246.110 접속
 - 9. 접속로그 확인 (리눅스에서)
-- 10. tail -f /home/var/apache2/access.log
+- 10. $ tail -f /home/var/apache2/access.log
+- 11. 모니터링 하다가
+- 12. 빠져나가기 => ctrl + c
+- 13. 에러로그 확인
+- 14. $ tail -f /home/var/apache2/error.log
 
 # 이후 작업
 - 코드 수정
 - git 최신반영
 - 서버 업데이트
-    $ fab deploy
+  $ fab deploy
 
 # 잘 안된다
 - 소스코드상에 파일명, 설정 값 등 오타가 없어야함
@@ -48,3 +52,9 @@ deploy
   $ $ rm -r -f .virtualenvs
 - 로컬 PC
   $ fab new_server
+
+# 가상 호스트가 설정된 부분
+- deploy는 프로젝트명(deploy.json)
+- /etc/apache2/sites-available/deploy.conf
+- 파일 읽기
+  $ cat /etc/apache2/sites-available/deploy.conf
