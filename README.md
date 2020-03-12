@@ -23,3 +23,28 @@ deploy
 - 2. 운영체계 및 서버 세팅 및 배포, 업데이트 관리 등등을 자동화하는 모듈 => fabric3
 - 3. $ pip3 install fabric3
 - 4. git에 최종소스 반영
+- 5. $ fab new_server 
+- 6. 중간에 y, git 로그인 등이 나올 수 있다
+- 7. 브라우저 가동
+- 8. 13.125.246.110 접속
+- 9. 접속로그 확인 (리눅스에서)
+- 10. tail -f /home/var/apache2/access.log
+
+# 이후 작업
+- 코드 수정
+- git 최신반영
+- 서버 업데이트
+    $ fab deploy
+
+# 잘 안된다
+- 소스코드상에 파일명, 설정 값 등 오타가 없어야함
+- git에 최종 소스가 모드 반영되어야함
+- 리눅스에서 기존의 흔적을 모두 제거
+  현재 위치 : /home/ubuntu
+  프로젝트 삭제 : $ rm -r -f deploy
+  숨김파일 확인
+  $ ls -a
+  가상환경 삭제
+  $ $ rm -r -f .virtualenvs
+- 로컬 PC
+  $ fab new_server
